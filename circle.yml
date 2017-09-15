@@ -1,0 +1,10 @@
+test:
+  override:
+      - ./test.sh
+deployment:
+  staging:
+    branch: master
+    commands:
+      - ./deploy.sh
+      - git clone https://github.com/vaddy/go-vaddy.git && cd ./go-vaddy/bin/  && ./vaddy-linux-64bit
+      - ./deploy2.sh
